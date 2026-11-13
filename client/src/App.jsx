@@ -26,14 +26,21 @@ import BookingChart from './components/hotelOwner/BookingChart';
 const App = () => {
 
   const isOwnerPath = useLocation().pathname.includes('owner');
-  const {showHotelReg, showWallet, showBarChart, setShowBarChart, showPieChart, setShowPieChart} = useAppContext();
+  const {showHotelReg, showWallet, showBarChart, setShowBarChart, showPieChart, setShowPieChart, firstLoad, setFirstLoad} = useAppContext();
   const [loading, setLoading] = useState(true);
   
 
 
   return (
     <>
-      {loading && <LoadingScreen onFinish={() => setLoading(false)}/>}
+      {loading && (
+        <LoadingScreen
+          onFinish={() => {
+            setLoading(false);
+            setFirstLoad(false);
+          }}
+        />
+      )}
       
     
         <div className={`transition-opacity duration-700 ${loading ? "opacity-0 pointer-events-none" : "opacity-100"}`}>

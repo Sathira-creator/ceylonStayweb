@@ -25,6 +25,8 @@ export const AppProvider = ({ children })=>{
     const [searchedCities, setSearchedCities] = useState([])
     const [rooms, setRooms] = useState([])
 
+    const [firstLoad, setFirstLoad] = useState(true);
+
     const [dashboardData, setDashboardData] = useState({
             bookings: [],
             totalBookings: 0,
@@ -76,7 +78,7 @@ export const AppProvider = ({ children })=>{
         currency, navigate, user, getToken, isOwner, setIsOwner, axios,
         showHotelReg, setShowHotelReg,searchedCities, setSearchedCities,
         rooms, setRooms, showWallet, setShowWallet,dashboardData, setDashboardData,
-        showBarChart, setShowBarChart,showPieChart, setShowPieChart
+        showBarChart, setShowBarChart,showPieChart, setShowPieChart, firstLoad, setFirstLoad
     }
 
     return (

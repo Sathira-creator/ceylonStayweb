@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 import { assets } from "../assets/assets";
+import { useAppContext } from "../context/AppContext";
 
 export const LoadingScreen = ({ onFinish }) => {
+
+  const { firstLoad, setFirstLoad } = useAppContext();
   const [text, setText] = useState("");
   const fullText = "Hello World ";
   const [progress, setProgress] = useState(0);
@@ -24,6 +27,8 @@ export const LoadingScreen = ({ onFinish }) => {
 
     return () => clearInterval(interval);
   }, []);
+
+  if (!firstLoad) return null;
 
   return (
     <div className={`fixed inset-0 flex flex-col items-center justify-center bg-white transition-opacity duration-700 ${
