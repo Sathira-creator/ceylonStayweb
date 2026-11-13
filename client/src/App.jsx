@@ -17,9 +17,7 @@ import Loader from './components/Loader';
 import { LoadingScreen } from './components/LoadingScreen';
 import { useState } from 'react';
 import Wallet from './components/hotelOwner/Wallet';
-import AddVideo from './pages/hotelOwner/AddVideo';
 import FeaturedDestinations from './pages/FeaturedDestinations';
-import Charts from './pages/hotelOwner/Charts';
 import RevenueChart from './components/hotelOwner/RevenueChart';
 import BookingChart from './components/hotelOwner/BookingChart';
 
@@ -58,12 +56,10 @@ const App = () => {
               <Route path='/my-bookings' element={<MyBookings/>} />
               <Route path='/loader/:nextUrl' element={<Loader/>} />
               <Route path='/featured-destinations' element={<FeaturedDestinations/>} />
-              <Route path='/charts' element={<Charts/>} />
 
               <Route path='/owner' element={<Layout/>}>
                 <Route index element={<Dashboard/>} />
                 <Route path='add-room' element={<AddRoom/>} />
-                <Route path='add-video' element={<AddVideo/>} />
                 <Route path='list-room' element={<ListRoom/>} />
                 
 
